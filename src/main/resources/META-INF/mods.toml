@@ -38,13 +38,13 @@ side = "BOTH"
 [[dependencies.${ mod_id }]]
 modId = "mekanism"
 mandatory = true
-versionRange = "[10.4.10.66,)"
+versionRange = "[10.4.10,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${ mod_id }]]
 modId = "mekanismgenerators"
 mandatory = true
-versionRange = "[10.4.10.66,)"
+versionRange = "[10.4.10,)"
 ordering = "NONE"
 side = "BOTH"

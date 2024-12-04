@@ -1,7 +1,11 @@
+
+
 plugins {
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
+
+
 
 version = "${minecraftVersion}-${modVersion}"
 group = mavenGroup
@@ -114,6 +118,23 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     flatDir { dir 'libs' }
     maven { url = 'https://modmaven.dev/' }
+    maven {
+        name = 'tterrag maven'
+        url = 'https://maven.tterrag.com/'
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+
 }
 
 dependencies {
@@ -123,7 +144,21 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
-    compileOnly("mekanism:Mekanism:${minecraftVersion}-${mekanismVersion}")
+    //compileOnly("mekanism:Mekanism:${minecraftVersion}-${mekanismVersion}")
+    compileOnly("mekanism:Mekanism:${minecraftVersion}-${mekanismVersion}:api")
+
+    runtimeOnly fg.deobf("mekanism:Mekanism:${minecraftVersion}-${mekanismVersion}")
+    runtimeOnly fg.deobf("mekanism:Mekanism:${minecraftVersion}-${mekanismVersion}:generators")
+
+    implementation fg.deobf("com.simibubi.create:create-${minecraftVersion}:${createVersionForge}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraftVersion}:${flywheelVersionForge}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrateVersion}")
+
+    implementation fg.deobf("maven.modrinth:jade:11.12.2+forge")
+    implementation fg.deobf("maven.modrinth:jei:iNv5B1Zj")
+    implementation fg.deobf("maven.modrinth:emi:1.1.18+1.20.1+forge")
+
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
