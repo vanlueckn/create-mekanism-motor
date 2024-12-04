@@ -1,0 +1,48 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+
+license="MIT"
+issueTrackerURL="https://github.com/MinecraftForge/MinecraftForge/issues"
+showAsResourcePack=false
+
+[[mods]]
+modId="createmekanismmotor"
+version="${file.jarVersion}"
+displayName="Create Mekanism Motor"
+updateJSONURL="https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json"
+displayURL="https://minecraftforge.net"
+logoFile="logo.png"
+credits="I'd like to thank my mother and father."
+authors="Luex, ClutchFred"
+description='''
+  Lets you craft dirt into diamonds. This is a traditional mod that has existed for eons. It is ancient. The holy Notch created it. Jeb rainbowfied it. Dinnerbone made it upside down. Etc.
+  '''
+displayTest="MATCH_VERSION"
+
+[[dependencies.createmekanismmotor]]
+modId="forge"
+mandatory=true
+versionRange="[47.3.12,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.createmekanismmotor]]
+modId="create"
+mandatory=true
+versionRange="[0.5.1.j,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.createmekanismmotor]]
+modId="mekanism"
+mandatory=true
+versionRange="[10.4.10.66,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.createmekanismmotor]]
+modId="mekanismgenerators"
+mandatory=true
+versionRange="[10.4.10.66,)"
+ordering="NONE"
+side="BOTH"
