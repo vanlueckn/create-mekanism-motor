@@ -1,48 +1,50 @@
-modLoader="javafml"
-loaderVersion="[47,)"
-
-license="MIT"
-issueTrackerURL="https://github.com/MinecraftForge/MinecraftForge/issues"
-showAsResourcePack=false
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+issueTrackerURL = "https://github.com/vanlueckn/create-mekanism-motor/issues"
+showAsResourcePack = false
 
 [[mods]]
-modId="createmekanismmotor"
-version="${file.jarVersion}"
-displayName="Create Mekanism Motor"
-updateJSONURL="https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json"
-displayURL="https://minecraftforge.net"
-logoFile="logo.png"
-credits="I'd like to thank my mother and father."
-authors="Luex, ClutchFred"
-description='''
-  Lets you craft dirt into diamonds. This is a traditional mod that has existed for eons. It is ancient. The holy Notch created it. Jeb rainbowfied it. Dinnerbone made it upside down. Etc.
-  '''
-displayTest="MATCH_VERSION"
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+displayURL = "https://modrinth.com/project/create-mekanism-motor"
+logoFile = "logo.png"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+displayTest = "MATCH_VERSION"
 
-[[dependencies.createmekanismmotor]]
-modId="forge"
-mandatory=true
-versionRange="[47.3.12,)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.${ mod_id }]]
+modId = "forge"
+mandatory = true
+versionRange = "${forge_version_range}"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies.createmekanismmotor]]
-modId="create"
-mandatory=true
-versionRange="[0.5.1.j,)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.${ mod_id }]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${mc_version_range}"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies.createmekanismmotor]]
-modId="mekanism"
-mandatory=true
-versionRange="[10.4.10.66,)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.${ mod_id }]]
+modId = "create"
+mandatory = true
+versionRange = "[0.5.1.j,)"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies.createmekanismmotor]]
-modId="mekanismgenerators"
-mandatory=true
-versionRange="[10.4.10.66,)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.${ mod_id }]]
+modId = "mekanism"
+mandatory = true
+versionRange = "[10.4.10.66,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${ mod_id }]]
+modId = "mekanismgenerators"
+mandatory = true
+versionRange = "[10.4.10.66,)"
+ordering = "NONE"
+side = "BOTH"

@@ -133,7 +133,9 @@ dependencies {
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             mc_version: minecraftVersion,
-            loader_version_range: loader_version_range,
+            mc_version_range: minecraftVersionRange,
+            forge_version: forgeVersion, forge_version_range: forgeVersionRange,
+            loader_version_range: loaderVersionRange,
             mod_id: modId, mod_name: modName, mod_license: modLicense, mod_version: modVersion,
             mod_authors: authors, mod_description: modDescription
     ]
